@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우진 홈페이지</title>
+    <style>
+        /* 쿠키런 포트 */
+        @font-face {
+        font-family: 'CookieRun';
+        font-weight: 700;
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.ttf') format("truetype");
+        font-display: swap;
+        }
+        /* 전역 */
+        body {
+            font-family: CookieRun;
+        }
+        /* 사이드 메뉴 CSS */
+        .sidebar_menu{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 15%;
+        }
+        #sidebar_menu div{
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+
+        /* Home 로고 CSS */
+        #main_logo_area{
+            padding: 5% 0 0 10%;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ccc;
+        }
+        #main_logo_area img{
+            height: 25px;
+            vertical-align: middle;
+        }
+        #main_logo:hover{
+            cursor: pointer;
+        }
+
+        /* 로그인 CSS */
+        #login_area{
+            color: #ccc;
+            font-weight: 600;
+            padding: 5% 0 0 10%;
+            display: block;
+        }
+        #profile{
+            vertical-align: middle;
+            width: 20%;
+            border-radius: 50%;
+        }
+        #login_etc{
+            color: #cecece;
+            text-align: right;
+            font-size: 12px;
+            margin-top: 2%;
+            padding-right: 5%;
+        }
+        #login_etc a:hover{
+            cursor: pointer;
+            color: gray;
+        }
+
+        /* 아이콘 CSS */
+        #icon_area{
+            text-align: center;
+        }
+        #icon_area a{
+            text-decoration: none;
+        }
+        #icon_area{
+            text-align: center;
+        }
+        #icon_area img{
+            height: 20px;
+            margin: 3%;
+        }
+
+        /* 메뉴 CSS */
+        #nav{
+            width: 100%;
+            margin: 20% 0% 0%;
+            list-style-type: none;
+            padding: 0;
+        }
+        #nav li{
+            margin: 0 0 10% 10%;
+
+        }
+        #nav li a{
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10% 0%;
+            font-size: 30px;
+        }
+        #nav li:hover{
+            cursor: pointer;
+        }
+
+        /* 하단 CopyRight CSS */
+        #copyright{
+            color: #ccc;
+            font-size: x-small;
+            position: absolute;
+            bottom: 0;
+            padding: 0% 0% 5% 2%;
+        }
+
+        /* 메뉴 호버시 밑줄 */
+        .underline {
+            line-height: 1.2;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 3em;
+            font-weight: 700;
+            background-image: linear-gradient(transparent calc(100% - 3px), #000 3px);
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            transition: background-size 0.8s;
+            color: #000;
+            cursor: pointer;
+        }
+        @media (min-width: 1000px) {
+            .underline {
+              font-size: 5em;
+            }
+        }
+        .underline.yellow {
+            background-image: linear-gradient(transparent 70%, #ffa500 80%);
+        }
+        .underline:hover {
+            background-size: 100% 100%;
+        }
+
+        /* hr CSS */  
+        .sidebar_menu hr{
+            width: 90%;
+            height: 1px;
+            border:0;
+            background: gray;
+        }
+
+        /* typing 이펙트 */
+        .typing_eff {
+            font-size: 20px;
+            min-width:11px;
+            white-space: nowrap;
+            margin: 0;
+            position: fixed;
+            color: transparent;
+            top:50%;
+            left:50%;
+            transform: translate(-35%, -50%);
+        }
+          
+        .typing_eff::before {
+            content: "Welcome to 우진's World!!!";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ccc;
+            overflow: hidden;
+            border-right: 1px solid black;
+            animation: typing 5s steps(31) infinite;
+        }
+            
+        @keyframes typing{
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        #main_img_area{
+            height: 100vh;
+            background-image: url("https://t1.daumcdn.net/cfile/tistory/2356853556C27BD133");
+            background-size: cover;
+        }
+        body{
+            margin: 0;
+        }
+
+        /* 페이지 공통 속성 */
+        .comendPage{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section class="sidebar_menu">
+        <div id="main_logo_area">
+            <span id="main_logo">
+                <img src="/images/home-icon-silhouette.png" alt=""> HOME
+            </span>
+        
+        </div>
+        <hr>
+        <div id="login_area">
+            <img id="profile" src="https://static.nid.naver.com/images/web/user/default.png?type=s160" alt="">
+            <span> 오우진</span>
+            <!--
+                로그인 안됐을 경우
+                <span> 로그인 해주세요</span>
+             -->
+        </div>
+        <div id="login_etc">
+            <!-- 
+                로그인 했을 경우 
+                <a>로그아웃</a>
+             -->
+            <a>로그인</a> /
+            <a>회원가입</a>
+        </div>
+        <hr>
+        <div id="icon_area">
+            <a href="">
+                <img src="/images/github.png" alt="">
+            </a>
+            <a href="">
+                <img src="/images/facebook.png" alt="">
+            </a>
+            <a href="">
+                <img src="/images/Notion.png" alt="">
+            </a>
+            <a href="http://qr.kakao.com/talk/rgjbGOMQdc.WR_TmG_FgZ_I6VpA-">
+                <img src="/images/kakao-talk.png" alt="">
+            </a>
+        </div>
+        <hr>
+
+        <ul id="nav">
+            <li>
+                <a class="yellow underline scroll-link" href="#myPage"> 👨‍💻About Me</a>
+                
+            </li>
+            <li>
+                <a class="yellow underline scroll-link" href="#loadMap"> 🚩LoadMap</a>
+            </li>
+            <li>
+                <a class="yellow underline scroll-link" href="#hobby"> ⚽Hobby</a>
+            </li>
+            <li>
+                <a class="yellow underline scroll-link" href="#members"> ⚙️admin</a>
+            </li>
+        </ul>
+        <div id="copyright">
+            Copyright © 우진 Corp. All rights reserved.
+        </div>
+	</section>
+    
+    
+    <!-- margin-left 15%을 줘야 메뉴바 뒤로 안넘어감 -->
+    <div style="margin-left: 15%;" id="main_img_area">
+        <div style="z-index: 999; position: absolute; top: 40%; left: 50%; transform: translate(-35%, -50%);">
+            <div style="color: #ccc; font-weight: 800; font-size: 50px; color: rgba(0, 0, 0, 0);" class="typing_eff"> Welcome to 우진's World!!!</div>
+        </div>
+        
+    </div>
+    
+    <!-- 여기서 부터 넣고 싶은 페이지-->
+
+    <!-- 마이페이지 -->
+    <section id="myPage">
+        <div style="margin-left: 15%;" class="comendPage">
+            <div style="font-size: 36px;">About me</div>
+            <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+            <table>
+                
+            </table>
+            
+        </div>
+    </section>
+
+    <!-- 로드맵 페이지 -->
+    <section id="loadMap">
+        <div style="margin-left: 15%;" class="comendPage">
+            <div style="font-size: 36px;">loadMap</div>
+            <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+
+        </div>
+    </section>
+
+    <!-- 취미 페이지 -->
+    <section id="hobby">
+        <div style="margin-left: 15%;" class="comendPage">
+            <div style="font-size: 36px;">hobby</div>
+            <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+
+        </div>
+    </section>
+
+    <!-- 회원목록열람 페이지 -->
+    <section id="members">
+        <div style="margin-left: 15%;" class="comendPage">
+            <div style="font-size: 36px;">Members</div>
+            <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+
+        </div>
+    </section>
+
+</body>
+<script>
+    document.getElementById('main_logo').addEventListener('click',() => {
+        location.href = "#main_img_area"
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        // 부드러운 스크롤을 적용할 링크 선택자
+        const scrollLinks = document.querySelectorAll('.scroll-link');
+
+        // 링크에 클릭 이벤트 추가
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                // 부드러운 스크롤 적용
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+</html>
