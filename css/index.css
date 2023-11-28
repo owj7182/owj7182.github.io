@@ -1,0 +1,261 @@
+/* 쿠키런 폰트 */
+        /* font-family: 'CookieRun'; */
+        @import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+        /* 더 잠실체 */
+        /* font-family: 'TheJamsil'; */
+        @import url('https://webfontworld.github.io/TheJamsil/TheJamsil.css');
+        /* 전역 */
+        body {
+            font-family: CookieRun;
+        }
+        /* 사이드 메뉴 CSS */
+        .sidebar_menu{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 15%;
+        }
+        #sidebar_menu div{
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+
+        /* Home 로고 CSS */
+        #main_logo_area{
+            padding: 5% 0 0 10%;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ccc;
+        }
+        #main_logo_area img{
+            height: 25px;
+            vertical-align: middle;
+        }
+        #main_logo:hover{
+            cursor: pointer;
+        }
+
+        /* 로그인 CSS */
+        #login_area{
+            color: #ccc;
+            font-weight: 600;
+            padding: 5% 0 0 10%;
+            display: block;
+        }
+        #profile{
+            vertical-align: middle;
+            width: 20%;
+            border-radius: 50%;
+        }
+        #login_etc{
+            color: #cecece;
+            text-align: right;
+            font-size: 12px;
+            margin-top: 2%;
+            padding-right: 5%;
+        }
+        #login_etc a:hover{
+            cursor: pointer;
+            color: gray;
+        }
+
+        /* 아이콘 CSS */
+        #icon_area{
+            text-align: center;
+        }
+        #icon_area a{
+            text-decoration: none;
+        }
+        #icon_area{
+            text-align: center;
+        }
+        #icon_area img{
+            height: 20px;
+            margin: 3%;
+        }
+
+        /* 메뉴 CSS */
+        #nav{
+            width: 100%;
+            margin: 20% 0% 0%;
+            list-style-type: none;
+            padding: 0;
+        }
+        #nav li{
+            margin: 0 0 10% 10%;
+
+        }
+        #nav li a{
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10% 0%;
+            font-size: 30px;
+        }
+        #nav li:hover{
+            cursor: pointer;
+        }
+
+        /* 하단 CopyRight CSS */
+        #copyright{
+            color: #ccc;
+            font-size: x-small;
+            position: absolute;
+            bottom: 0;
+            padding: 0% 0% 5% 2%;
+        }
+
+        /* 메뉴 호버시 밑줄 */
+        .underline {
+            line-height: 1.2;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 3em;
+            font-weight: 700;
+            background-image: linear-gradient(transparent calc(100% - 3px), #000 3px);
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            transition: background-size 0.8s;
+            color: #000;
+            cursor: pointer;
+        }
+        @media (min-width: 1000px) {
+            .underline {
+              font-size: 5em;
+            }
+        }
+        .underline.yellow {
+            background-image: linear-gradient(transparent 70%, #ffa500 80%);
+        }
+        .underline:hover {
+            background-size: 100% 100%;
+        }
+
+        /* hr CSS */  
+        .sidebar_menu hr{
+            width: 90%;
+            height: 1px;
+            border:0;
+            background: gray;
+        }
+
+        /* typing 이펙트 */
+        .typing_eff {
+            font-size: 20px;
+            min-width:11px;
+            white-space: nowrap;
+            margin: 0;
+            position: fixed;
+            color: transparent;
+            top:50%;
+            left:50%;
+            transform: translate(-35%, -50%);
+        }
+          
+        .typing_eff::before {
+            content: "Welcome to 우진's World!!!";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ccc;
+            overflow: hidden;
+            border-right: 1px solid black;
+            animation: typing 5s steps(31) infinite;
+        }
+            
+        @keyframes typing{
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        #main_img_area{
+            height: 100vh;
+            background-image: url("https://t1.daumcdn.net/cfile/tistory/2356853556C27BD133");
+            background-size: cover;
+        }
+        body{
+            margin: 0;
+        }
+
+        /* 페이지 공통 속성 */
+        .comendPage{
+
+            /* vh는 어디에 띄워 놓고 설정하는가가 중요 거기에 맞춰져서 %개념으로 들어감 */
+            /* 학원 모니터 용 */
+            height: 100vh;
+            /* 노트북 용 */
+            /* height: 100vh; */
+
+        }
+
+
+        /* 마이페이지 css */
+        #myPage_table{
+            margin-left: 15%;
+            font-size: 36px;
+        }
+        #myPage_img{
+            padding-right: 150px;
+        }
+        th{
+            padding-bottom: 50px;
+        }
+
+        /* 로드맵페이지 css */
+        #loadMap_table{
+            margin-left: 20%;
+            font-family: 'TheJamsil';
+        }
+
+
+        /* hobby 페이지 css */
+        #hobby > .comendPage > span{
+            display: inline-block;
+            width: 30%;
+            height: 70%;
+            margin-left: 10%;
+        }
+        /* sports */
+        #hobby > .comendPage > span > .hobby_sports >legend{
+            font-size: 36px;
+            text-align: center;
+        }
+        #hobby > .comendPage > span > .hobby_sports > div{
+            display: table;
+            text-align: center;
+        }
+        #hobby > .comendPage > span > .hobby_sports{
+            border-radius: 20%;
+        }
+        /* tour */
+        #hobby > .comendPage > span > .hobby_tour >legend{
+            font-size: 36px;
+            text-align: center;
+        }
+        #hobby > .comendPage > span > .hobby_tour > div{
+            display: table;
+            text-align: center;
+        }
+        #hobby > .comendPage > span > .hobby_tour{
+            border-radius: 30%;
+        }
+        .hobby_sports{
+            margin-left: 10%;
+            width: 100%;
+            height: 100%;
+        }
+        .hobby_tour{
+            margin-left: 20%;
+            width: 100%;
+            height: 100%;
+        }
