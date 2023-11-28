@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우진 홈페이지</title>
     <style>
-        /* 쿠키런 포트 */
-        @font-face {
-        font-family: 'CookieRun';
-        font-weight: 700;
-        font-style: normal;
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot');
-        src: url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.eot?#iefix') format('embedded-opentype'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff2') format('woff2'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.woff') format('woff'),
-            url('https://cdn.jsdelivr.net/gh/webfontworld/cookierun/CookieRunBold.ttf') format("truetype");
-        font-display: swap;
-        }
+        /* 쿠키런 폰트 */
+        /* font-family: 'CookieRun'; */
+        @import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+        /* 더 잠실체 */
+        /* font-family: 'TheJamsil'; */
+        @import url('https://webfontworld.github.io/TheJamsil/TheJamsil.css');
         /* 전역 */
         body {
             font-family: CookieRun;
@@ -202,7 +196,30 @@
 
         /* 페이지 공통 속성 */
         .comendPage{
+            /* 노트북 용 */
+            /* height: 150vh; */
+    
+            /* 학원 모니터 용 */
             height: 100vh;
+        }
+
+
+        /* 마이페이지 css */
+        #myPage_table{
+            margin-left: 15%;
+            font-size: 36px;
+        }
+        #myPage_img{
+            padding-right: 150px;
+        }
+        th{
+            padding-bottom: 50px;
+        }
+
+        /* 로드맵페이지 css */
+        #loadMap_table{
+            margin-left: 20%;
+            font-family: 'TheJamsil';
         }
     </style>
 </head>
@@ -284,8 +301,33 @@
         <div style="margin-left: 15%;" class="comendPage">
             <div style="font-size: 36px;">About me</div>
             <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
-            <table>
-                
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <table id="myPage_table">
+                <tr>
+                    <th rowspan="8"><img src="/images/cuteCat-unscreen.gif" alt="" id="myPage_img"></th>
+                    <th>Backend_Developer</th>
+                </tr>
+                <tr>
+                    <td>신입 개발자라는 출발선에 서기 위해</td>
+                </tr>
+                <tr >
+                    <td style="padding-bottom: 10px;">매일 한 걸음씩 꾸준히 나아가겠습니다.</td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px;">name : 오우진</td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px;">age : 26</td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px;">phone : 010-5049-4819</td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px;">email : owj7182@naver.com</td>
+                </tr>
+                <tr>
+                    <td>address : 서울특별시 노원구 하계동</td>
+                </tr>
             </table>
             
         </div>
@@ -296,7 +338,97 @@
         <div style="margin-left: 15%;" class="comendPage">
             <div style="font-size: 36px;">loadMap</div>
             <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <!-- <hr style="width: 400px;"> -->
+            <table id="loadMap_table">
+                <tr>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Front-end</label>
+                            <li>Javascript</li>
+                            <li>jQuery</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>Ajax</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Back-end</label>
+                            <li>Java</li>
+                            <li>Jsp & Servlet</li>
+                            <li>MyBatis</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Framework / Library  </label>
+                            <li>Spring</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">DB</label>
+                            <li>oracle</li>
+                        </ul>
+                    </td>    
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Tool</label>
+                            <li>eclipse</li>
+                            <li>SQL developer</li>
+                            <li>Visul studio code</li>
+                            <li>sourcetree</li>
+                            <li>STS(spring-tool-suite)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Environment</label>
+                            <li>window10</li>
+                            <li>Tomcat</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">Repository</label>
+                            <li>github</li>
+                            <li>git</li>
+                            <li>nostion</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <label style="font-size: 20px;">향후 발전 시키고 싶은 기술 스택</label>
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>Spring Boot</li>
+                            <li>My SQL</li>
+                            <li>Python</li>
+                            <li>R</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <hr>
+                    </td>
+                </tr>
+                <td>
+                    <ul>
+                        <label style="font-size: 20px;">License</label>
+                        <li>정보처리기사 (취득일자 : 2022-11-25)</li>
+                        <li>SQLD (취득예정)</li>
+                        <li>리눅스 마스터2급 (취득예정)</li>
+                        <li>빅데이터분석기사 (취득예정)</li>
+                    </ul>
+                </td>
+                <tr>
 
+                </tr>
+            </table>
         </div>
     </section>
 
