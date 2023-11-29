@@ -57,10 +57,20 @@
             margin-top: 2%;
             padding-right: 5%;
         }
+        #login_etc a{
+            text-decoration: none;
+            color: #cecece;
+        }
         #login_etc a:hover{
             cursor: pointer;
             color: gray;
+            text-decoration: none;
         }
+        #login_etc a:active{
+            color: #cecece;
+        }
+        /* 회원가입 a태그 */
+
 
         /* 아이콘 CSS */
         #icon_area{
@@ -237,25 +247,32 @@
         #hobby > .comendPage > span > .hobby_sports{
             border-radius: 20%;
         }
-        /* tour */
-        #hobby > .comendPage > span > .hobby_tour >legend{
-            font-size: 36px;
-            text-align: center;
-        }
-        #hobby > .comendPage > span > .hobby_tour > div{
-            display: table;
-            text-align: center;
-        }
-        #hobby > .comendPage > span > .hobby_tour{
-            border-radius: 30%;
-        }
         .hobby_sports{
             margin-left: 10%;
             width: 100%;
             height: 100%;
         }
-        .hobby_tour{
-            margin-left: 20%;
+
+        /* hobby_baseball */
+        #hobby_baseball > .comendPage > span{
+            display: inline-block;
+            width: 30%;
+            height: 70%;
+            margin-left: 10%;
+        }
+        #hobby_baseball > .comendPage > span > .hobby_sports >legend{
+            font-size: 36px;
+            text-align: center;
+        }
+        #hobby_baseball > .comendPage > span > .hobby_sports > div{
+            display: table;
+            text-align: center;
+        }
+        #hobby_baseball > .comendPage > span > .hobby_sports{
+            border-radius: 20%;
+        }
+        .hobby_sports{
+            margin-left: 10%;
             width: 100%;
             height: 100%;
         }

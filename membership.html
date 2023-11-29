@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>    
+    <style>
+        @import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0; 
+        }
+        
+        fieldset {
+            width: 500px;
+            height: 700px;
+            background-color: #ededed;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 70px;
+        }
+
+        /* 가입버튼 */
+        #submit_button {
+            width: 450px;
+            height: 50px;
+            background-color: rgb(125, 160, 224);
+            color: aliceblue;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /* input박스 클릭시 테두리 없애기 */
+        input:focus {outline:none;}
+
+        /* 이름 */
+        .name {
+            padding-bottom: 20px;
+        }
+        #name {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+
+        /* 아이디 */
+        .username {
+            padding-bottom: 20px;
+        }
+        #username {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        
+        /* 패스워드 */
+        .password {
+            padding-bottom: 20px;
+        }
+        #password {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+
+        /* 패스워드 확인 */
+        .checkPassword {
+            padding-bottom: 20px;
+        }
+        #checkPassword {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+
+        /* 전화번호 */
+        .checkPassword {
+            padding-bottom: 20px;
+        }
+        #checkPassword {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+
+        /* 전화번호 */
+        .phone {
+            padding-bottom: 20px;
+        }
+        #tel1 {
+            width: 80px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        #tel2 {
+            width: 80px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        #tel3 {
+            width: 80px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+
+        /* 이메일 */
+        .email {
+            padding-bottom: 30px;
+            width: 500px;
+        }
+        #email1 {
+            width: 123px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        #email2 {
+            width: 123px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        /* 주소 */
+        .address {
+            padding-bottom: 30px;
+            width: 500px;
+        }
+        #address1 {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+        #address2 {
+            width: 270px;
+            border: none;
+            border-bottom: dashed;
+            background-color: #ededed;
+        }
+    </style>
+</head>
+<body>
+    <form name="signupFrm" action="javascript:requestSignup();">
+        <fieldset style="border-radius: 10%;">
+            <legend style="font-family: 'CookieRun'; font-size: larger;">홈페이지 회원가입 창</legend>
+            
+            <div class="username" style="height: 52px;">
+                <span style="padding-right: 92px; font-size: large; font-weight: 900;">😁이름</span>
+                <input type="text" name="username" id="username" required onblur="checkblur(this);" onfocus="checkfocus(this);">
+                <span style="padding-left: 170px; font-weight: 100;">
+                    <sup class="reqMsg" style="display:none; color: red;">필수 입력사항 입니다.</sup>
+                </span>
+            </div>
+
+            <div class="name" style="height: 52px;">
+                <span style="padding-right: 76px; font-size: large; font-weight: 900;">🔑아이디</span>
+                <input type="text" name="name" id="name" required onblur="checkblur(this);" onfocus="checkfocus(this);">
+                <span style="padding-left: 170px; font-weight: 100;">
+                    <sup class="reqMsg" style="display:none; color: red;">필수 입력사항 입니다.</sup>
+                </span>
+            </div>
+
+            <div class="password" style="height: 52px;">
+                <span style="padding-right: 62px; font-size: large; font-weight: 900;">🔒패스워드</span> 
+                <input type="password" name="password" id="password" required onblur="checkblur(this);" onfocus="checkfocus(this);"><br>
+                <span style="padding-left: 170px; font-weight: 100;">
+                    <sup id="pwdMsg" style="display:none">영문자 대/소문자, 특수문자, 숫자 포함 8~32자</sup>
+                    <sup class="reqMsg" style="display:none; color: red;">필수 입력사항 입니다.</sup>
+                </span>
+            </div>
+
+            <div class="checkPassword" style="height: 52px;">
+                <span style="padding-right: 15px; font-size: large; font-weight: 900;">🔐패스워드 확인</span>
+                <input type="password" name="checkPassword" id="checkPassword" required onblur="checkblur(this);" onfocus="checkfocus(this);">
+                <span style="padding-left: 170px; font-weight: 100;">
+                    <sup class="reqMsg" style="display:none; color: red;">필수 입력사항 입니다.</sup>
+                </span>
+            </div>
+
+            <div class="phone" style="height: 52px;">
+                <span style="padding-right: 64px; font-size: large; font-weight: 900;">📒전화번호</span>
+                <input type="phone" name="tel1" id="tel1" required onblur="checkblur(this);" onfocus="checkfocus(this);">-
+                <input type="phone" name="tel2" id="tel2" required onblur="checkblur(this);" onfocus="checkfocus(this);">-
+                <input type="phone" name="tel3" id="tel3" required onblur="checkblur(this);" onfocus="checkfocus(this);">
+                <span style="padding-left: 170px; font-weight: 100;">
+                    <sup class="reqMsg" style="display:none; color: red;">필수 입력사항 입니다.</sup>
+                </span>
+            </div>
+
+            <div class="email" style="height: 52px;">
+                <span style="padding-right: 79px; font-size: large; font-weight: 900;">📧이메일</span>
+                <input type="text" name="email1" id="email1" style="width: 125px;">@<input type="text" name="email2" id="email2" style="width: 125px">
+            </div>
+
+            <div class="address">
+                <span style="padding-right: 96px; font-size: large; font-weight: 900;">📫주소</span>
+                <input type="text" name="address1" id="address1"><br><br>
+                <span style="padding-left: 161px;"><input type="text" name="address2" id="address2" style="padding-top: 20px;" ></span>
+            </div>
+
+            <div style="padding-top: 30px; padding-left: 30px;">
+                <input type="submit" id="submit_button" value="회원가입"></input>
+            </div>
+            
+        </fieldset>
+    </form>
+    <script>
+        const frm = document.signupFrm;
+        const name = frm.name;
+        const username = frm.username;
+        const password = frm.password;
+        const checkPassword = frm['checkPassword'];
+        const phone = frm.tel1 + '-' + frm.tel2 + '-' + frm.tel3;
+        const email = frm.email1 +'@'+ frm.email2; 
+        const address = frm.address1 + frm.address2; 
+
+        document.signupFrm.onsubmit = (e) => {
+            
+            // 유효성검사
+
+            // 1. 이름 유효성검사
+            // 한글2글자 이상만 허용.
+            const regExp0 = /^[가-힣]{2,}$/;
+            if (!regExpTest(regExp0, username, "한글2글자이상 입력하세요."))
+                return false;
+
+            // 2. 아이디 유효성검사
+            //첫글자는 영소문자로 이루어지고, 길이는 4~12글자, 숫자 하나이상 포함
+            const regExp1 = /^[a-z][a-z\d]{3,11}$/;
+            const regExp2 = /[0-9]/;
+            if(!regExpTest(regExp1
+                        ,name
+                        ,"아이디는 영소문자로 시작하는 4~12글자에 숫자하나이상 포함입니다."))
+                return false; // submit핸들러 기본 작동(submit)을 방지
+            if(!regExpTest(regExp2
+                        ,name
+                        ,"아이디는 숫자를 하나이상 포함하세요."))
+                return false;
+
+            //3. 비밀번호 유효성검사
+            const regExpArr = [/^.{8,15}$/, /\d/, /[a-zA-Z]/, /[\\*!&]/];
+
+            for (let i = 0; i < regExpArr.length; i++) {
+            if (
+                !regExpTest(
+                    regExpArr[i],
+                    password,
+                    "비밀번호는 8~15자리 숫자/문자/특수문자를 포함해야합니다."
+                    )
+                ) {
+                    return false;
+                }
+            }
+
+            //4. 비밀번호일치여부
+            if (!isEqualPwd()) {
+                return false;
+            }
+
+            //5. 휴대폰번호 검사
+            // 010-xxxx-xxxx형식으로 입력
+            if (!regExpTest(/^(010)$/, tel1, "010입력")) 
+                return false;
+            if (!regExpTest(/^[0-9]{4}$/, tel2, "4자리 번호 입력"))
+                return false;
+            if (!regExpTest(/^[0-9]{4}$/, tel3, "4자리 번호 입력"))
+                return false;
+
+        return true;
+
+        };
+
+        // 클릭시
+
+        let pwdMsg = document.getElementById("pwdMsg");
+
+        // 패스워드 클릭시 "영문자 대/소문자, 특수문자, 숫자 포함 8~32자"문자 출력
+        password.addEventListener('click', () => {
+            console.log(pwdMsg);
+            pwdMsg.style.display="";
+        });
+
+        // focus에서 나갈 시 "영문자 대/소문자, 특수문자, 숫자 포함 8~32자" 문구 사라짐
+        password.addEventListener('blur', () => {
+            pwdMsg.style.display="none";
+        });
+
+        // input에 관한 분기처리
+        let reqMsgs = document.querySelectorAll('input');
+        reqMsgs.forEach((input, index) => {
+            input.addEventListener('click', () => {
+                for(let i = 0; i < index; i++){
+                    console.log(index)
+                    if(i < 5){
+                        checkblur(reqMsgs[i])
+                    }
+                }
+
+            });
+        });
+        
+        
+        function checkblur(e){
+            if(e.value == ""){
+                e.parentElement.querySelector('.reqMsg').style.display="";
+            }
+
+        };
+
+        function checkfocus(e){
+            e.parentElement.querySelector('.reqMsg').style.display="none";
+        };
+
+         // 폼 제출 여부
+        const requestSignup = () => {
+            const nameValue = name.value;  // 수정
+            const usernameValue = username.value;  // 수정
+            const passwordValue = password.value;  // 수정
+            const checkPasswordValue = checkPassword.value;  // 수정
+            const phoneValue = tel1.value + '-' + tel2.value + '-' + tel3.value;  // 수정
+            const emailValue = email1.value + '@' + email2.value;  // 수정
+            const addressValue = address1.value + ' ' + address2.value;  // 수정
+
+            console.log('회원가입 성공~ 😁');
+            alert(`${usernameValue} 회원가입을 환영합니다.`);
+            saveUserInformation(nameValue, usernameValue, passwordValue, checkPasswordValue, phoneValue, emailValue, addressValue);  // 수정
+            frm.reset();  
+        };
+
+        // 비밀번호 일치 여부 함수
+        function isEqualPwd() {
+            if (password.value === checkPassword.value) {
+                return true;
+            } 
+            else {
+                alert("비밀번호가 일치하지 않습니다.");
+                password.select();
+                return false;
+            }
+        };
+
+        // 정규식 관련 함수
+        function regExpTest(regExp, el, msg) {
+            if (regExp.test(el.value)) return true;
+            //적합한 문자열이 아닌 경우
+            alert(msg);
+            el.focus();
+            return false;
+        };
+
+        const saveUserInformation = (name, username, checkPassword, phone, email, address) => {
+            // localStorage에 저장
+            // userInformation에 저장된 배열이 있다면 그걸 사용. 없으면 새 배열 생성.
+            const userInformation = JSON.parse(localStorage.getItem('userInformation')) || [];
+            userInformation.push(new UserInformation(name, username, checkPassword, phone, email, address));
+            console.log(userInformation);
+
+            localStorage.setItem('userInformation', JSON.stringify(userInformation));
+            frm.reset();
+        };
+
+        class UserInformation {
+            constructor(name, username, password, checkPassword, phone, email, address, createdAt = Date.now()) {
+                this.name = name;
+                this.username = username;
+                this.password = password;
+                this.checkPassword = checkPassword;
+                this.phone = phone;
+                this.email = email;
+                this.address = address;
+                this.createdAt = createdAt;
+            }
+        }
+    </script>
+</body>
+</html>
