@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        .loginInfo{
+            margin-top: 20%;
+            text-align: center;
+            
+        }
+    </style>
 </head>
 <body>
     
+    <div class="loginInfo">
+        <div class="name" style="height: 52px;">
+            <span style="padding-right: 76px; font-size: large; font-weight: 900;">🔑아이디</span>
+            <input type="text" name="loginUsername" id="loginUsername" required>
+        </div>
+        
+        <div class="password" style="height: 52px;">
+            <span style="padding-right: 62px; font-size: large; font-weight: 900;">🔒비밀번호</span> 
+            <input type="password" name="loginPassword" id="loginPassword" required><br>
+        </div>
+
+        <div class="login" style="padding-top: 30px; padding-left: 30px;">
+            <input type="submit" id="login_button" value="로그인" onclick="requestLogin();"></input>
+        </div>
+    </div>
+
+    <script>
+        const requestLogin = () => {
+            const nameValue = document.getElementById('loginUsername').value;
+            const passwordValue = document.getElementById('loginPassword').value;
+
+            const userInformation = JSON.parse(localStorage.getItem('userInformation')) || [];
+
+            const foundUser = userInformation.find(user => user.name === nameValue && user.password === passwordValue);
+
+            if (foundUser) {
+                alert(`${foundUser.username} 님, 환영합니다!`);
+                // 로그인 성공 시 다음 동작 수행
+                // 예: 로그인 후의 페이지로 이동
+                window.location.href = "index.html";
+            } else {
+                alert('로그인 실패. 아이디 또는 비밀번호를 확인하세요.');
+            }
+        };
+    </script>
 </body>
 </html>

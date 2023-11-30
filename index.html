@@ -17,7 +17,7 @@
         <hr>
         <div id="login_area">
             <img id="profile" src="https://static.nid.naver.com/images/web/user/default.png?type=s160" alt="">
-            <span> 오우진</span>
+            <span id="loggedInUsername"> 오우진</span>
             <!--             
                 로그인 안됐을 경우
                 <span> 로그인 해주세요</span>
@@ -28,7 +28,7 @@
                 로그인 했을 경우 
                 <a>로그아웃</a>
              -->
-            <a>로그인</a> /
+            <a href="login.html">로그인</a> /
             <a href="membership.html">회원가입</a>
         </div>
         <hr>
@@ -259,6 +259,22 @@
         <div style="margin-left: 15%;" class="comendPage">
             <div style="font-size: 36px;">Members</div>
             <hr style="border: 5px solid #ffa500; width: 160px; float: left;">
+            <br><br><br><br><br><br>
+            <table id="tb-users">
+                
+                <thead>
+                    <tr>
+                        <th>이름</th>
+                        <th>아이디</th>
+                        <th>비밀번호</th>
+                        <th>전화번호</th>
+                        <th>이메일</th>
+                        <th>주소</th>
+                        <th>가입일시</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
 
         </div>
     </section>

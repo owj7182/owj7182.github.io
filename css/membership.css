@@ -1,0 +1,137 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0; 
+}
+
+fieldset {
+    width: 500px;
+    height: 700px;
+    background-color: #ededed;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 70px;
+}
+
+/* 가입버튼 */
+#submit_button {
+    width: 450px;
+    height: 50px;
+    background-color: rgb(125, 160, 224);
+    color: aliceblue;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* input박스 클릭시 테두리 없애기 */
+input:focus {outline:none;}
+
+/* 이름 */
+.name {
+    padding-bottom: 20px;
+}
+#name {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 아이디 */
+.username {
+    padding-bottom: 20px;
+}
+#username {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 패스워드 */
+.password {
+    padding-bottom: 20px;
+}
+#password {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 패스워드 확인 */
+.checkPassword {
+    padding-bottom: 20px;
+}
+#checkPassword {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 전화번호 */
+.checkPassword {
+    padding-bottom: 20px;
+}
+#checkPassword {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 전화번호 */
+.phone {
+    padding-bottom: 20px;
+}
+#tel1 {
+    width: 80px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+#tel2 {
+    width: 80px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+#tel3 {
+    width: 80px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+
+/* 이메일 */
+.email {
+    padding-bottom: 30px;
+    width: 500px;
+}
+#email1 {
+    width: 123px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+#email2 {
+    width: 123px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
+/* 주소 */
+.address {
+    padding-bottom: 30px;
+    width: 500px;
+}
+#address {
+    width: 270px;
+    border: none;
+    border-bottom: dashed;
+    background-color: #ededed;
+}
