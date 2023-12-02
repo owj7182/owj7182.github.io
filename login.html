@@ -52,9 +52,9 @@
             }
         };
 
-        // 함수명 수정: authenticateUser
+        // authenticateUser
         const authenticateUser = (loginUsername, loginPassword) => {
-            // 여기에서는 간단한 예시로 미리 등록된 사용자 정보를 확인
+            // 여기에서는 미리 등록된 사용자 정보를 확인
             const users = JSON.parse(localStorage.getItem('userInformation')) || [];
 
             // 등록된 사용자 중에서 아이디와 비밀번호가 일치하는 사용자 찾기
