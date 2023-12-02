@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        .loginInfo{
+        .loginInfo {
             margin-top: 20%;
             text-align: center;
-            
         }
     </style>
 </head>
@@ -26,27 +25,42 @@
         </div>
 
         <div class="login" style="padding-top: 30px; padding-left: 30px;">
-            <input type="submit" id="login_button" value="로그인" onclick="requestLogin();"></input>
+            <input type="submit" id="login_button" value="로그인" onclick="handleLogin();"></input>
+        </div>
+        <div style="padding-left: 300px;">
+            <a href="index.html">🏠Home</a>
         </div>
     </div>
 
     <script>
-        const requestLogin = () => {
-            const nameValue = document.getElementById('loginUsername').value;
-            const passwordValue = document.getElementById('loginPassword').value;
+        const handleLogin = () => {
+            // name -> loginUsername, password -> loginPassword
+            const loginUsername = document.getElementById('loginUsername').value;
+            const loginPassword = document.getElementById('loginPassword').value;
 
-            const userInformation = JSON.parse(localStorage.getItem('userInformation')) || [];
+            // 여기에서 실제 로그인 처리를 수행하고, 로그인이 성공하면 사용자 정보를 저장
+            const user = authenticateUser(loginUsername, loginPassword);
 
-            const foundUser = userInformation.find(user => user.name === nameValue && user.password === passwordValue);
-
-            if (foundUser) {
-                alert(`${foundUser.username} 님, 환영합니다!`);
-                // 로그인 성공 시 다음 동작 수행
-                // 예: 로그인 후의 페이지로 이동
-                window.location.href = "index.html";
+            if (user) {
+                // 로그인 성공 시 사용자 정보를 localStorage에 저장
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+                // 로그인 성공 시 메인 페이지로 이동 또는 다른 동작 수행
+                window.location.href = 'index.html';
             } else {
-                alert('로그인 실패. 아이디 또는 비밀번호를 확인하세요.');
+                // 로그인 실패 시 처리 (예: 오류 메시지 표시)
+                alert('로그인 실패. 아이디와 비밀번호를 확인하세요.');
             }
+        };
+
+        // 함수명 수정: authenticateUser
+        const authenticateUser = (loginUsername, loginPassword) => {
+            // 여기에서는 간단한 예시로 미리 등록된 사용자 정보를 확인
+            const users = JSON.parse(localStorage.getItem('userInformation')) || [];
+
+            // 등록된 사용자 중에서 아이디와 비밀번호가 일치하는 사용자 찾기
+            const authenticatedUser = users.find(user => user.name === loginUsername && user.password === loginPassword);
+
+            return authenticatedUser;
         };
     </script>
 </body>

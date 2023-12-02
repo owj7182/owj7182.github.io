@@ -22,11 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// 흠.... 맴버열람 관련 쓸 수도 있음 안 쓰면 삭제
-document.getElementById('members').addEventListener('click', () => {
-    renderUserInformation();
-});
-
 /**
  * localStorage userInformation을 화면에 출력하기
  *  - userInformation -> tr
@@ -67,11 +62,38 @@ const convertToDatTime = (millis) => {
     return `${mm}/${dd} ${hh}:${mi}`
 };
 
-
-// 로그인한 사람의 이름으로 변경
-function showWelcomeMessage(username) {
+// span 태그쪽에 로그인한 사용이름 넣기
+document.addEventListener('DOMContentLoaded', function () {
+    // span 태그쪽에 로그인한 사용자 이름 넣기
     const loggedInUsername = document.getElementById('loggedInUsername');
-    loggedInUsername.textContent = username;
-};
+    
+    // localStorage에서 로그인한 사용자 정보 가져오기
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (loggedInUser) {
+        // 로그인한 사용자가 있는 경우 사용자 이름을 표시
+        loggedInUsername.innerHTML = loggedInUser.username;
+    }
+});
+
+document.getElementById('members').addEventListener('click', () => {
+    // localStorage에서 로그인한 사용자 정보 가져오기
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    // 로그인한 사용자 name(아이디)이 "woojin1"일 때만 회원 목록 열람 가능
+    if (loggedInUser && loggedInUser.name === "woojin1") {
+        // 호출코드가 name(아이디)이 "woojin1"일 경우에만 열림
+        renderUserInformation();
+    } else {
+        alert('회원 목록을 열람할 수 있는 권한이 없습니다.');
+        
+    }
+});
 
 
+// 취미쪽에 jQuery라이브러리를 이용해서 사진띄우기
+$('.bxslider').bxSlider({
+    mode: 'fade',
+    captions: true,
+    slideWidth: 600
+});
