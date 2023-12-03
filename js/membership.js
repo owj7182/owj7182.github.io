@@ -2,9 +2,9 @@ const frm = document.signupFrm;
 const name = frm.name;
 const username = frm.username;
 const password = frm.password;
-const checkPassword = frm['checkPassword'];
+const checkPassword = frm.checkPassword;
 const phone = frm.tel1 + '-' + frm.tel2 + '-' + frm.tel3;
-const email = frm.email1 +'@'+ frm.email2; 
+const email = frm.email1 +'@'+ frm.email2;
 const address = frm.address;
 
 document.signupFrm.onsubmit = (e) => {
