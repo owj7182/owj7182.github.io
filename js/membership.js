@@ -118,7 +118,7 @@ const requestSignup = () => {
 
     console.log('회원가입 성공~ 😁');
     alert(`${usernameValue} 회원가입을 환영합니다.`);
-    saveUserInformation(nameValue, usernameValue, passwordValue, checkPasswordValue, phoneValue, emailValue, addressValue);  // 수정
+    saveUserInformation(nameValue, usernameValue, passwordValue, checkPasswordValue, phoneValue, emailValue, addressValue);
     frm.reset();  
 };
 
